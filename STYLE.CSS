@@ -1,0 +1,120 @@
+:root {
+    --primary-color: #4a90e2;
+    --success-color: #2ec4b6;
+    --error-color: #e71d36;
+    --background-color: #f4f7f6;
+    --card-color: #ffffff;
+    --text-color: #333333;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.quiz-container {
+    background-color: var(--card-color);
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 550px;
+    padding: 30px;
+}
+
+.screen {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+h1, h2 {
+    color: var(--text-color);
+    text-align: center;
+}
+
+.quiz-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    color: #666;
+}
+
+.progress-bar-container {
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    height: 8px;
+    width: 100%;
+    overflow: hidden;
+}
+
+#progress-bar {
+    background-color: var(--primary-color);
+    height: 100%;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+.options-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+}
+
+button:hover {
+    filter: brightness(0.9);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Option States mapped via JavaScript */
+.option-btn {
+    background-color: #f0f0f0;
+    color: var(--text-color);
+    text-align: left;
+}
+
+.option-btn:hover:not([disabled]) {
+    background-color: #e2e2e2;
+}
+
+.option-btn.correct {
+    background-color: var(--success-color);
+    color: white;
+}
+
+.option-btn.wrong {
+    background-color: var(--error-color);
+    color: white;
+}
+
+#next-btn {
+    margin-top: 10px;
+    background-color: #333;
+}
